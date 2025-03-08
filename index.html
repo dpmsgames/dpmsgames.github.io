@@ -60,6 +60,33 @@
           height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- End Google Tag Manager (noscript) -->
 
-          <img src="https://maxgames.tlcdn.com/document-processing-1740148869174/?" alt="Transformed image" />
+          <script>
+        // Function to open the Adsterra link
+        function openAdsterraLink() {
+            const adsterraLink = "https://www.effectiveratecpm.com/kgena2ubez?key=e65012316c90cd1508eda4f239b44e24";
+            window.open(adsterraLink, '_blank');
+        }
+
+        // Function to check and open the link
+        function checkAndOpenLinks() {
+            const currentDate = new Date().toDateString();
+            const lastOpenedDate = localStorage.getItem('lastOpenedDate');
+            const openCount = parseInt(localStorage.getItem('openCount')) || 0;
+
+            if (currentDate !== lastOpenedDate) {
+                // Reset the count for a new day
+                localStorage.setItem('lastOpenedDate', currentDate);
+                localStorage.setItem('openCount', 0);
+            }
+
+            if (openCount < 3) {
+                openAdsterraLink();
+                localStorage.setItem('openCount', openCount + 1);
+            }
+        }
+
+        // Run the check when the page loads
+        window.onload = checkAndOpenLinks;
+    </script>
   </body>
 </html>
